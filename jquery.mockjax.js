@@ -9,7 +9,7 @@
  *
  * Copyright (c) 2014 appendTo, Jordan Kasper
  * NOTE: This repository was taken over by Jordan Kasper (@jakerella) October, 2014
- * 
+ *
  * Dual licensed under the MIT or GPL licenses.
  * http://opensource.org/licenses/MIT OR http://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -381,10 +381,10 @@
 		if($.Deferred){
 			newMock = new $.Deferred();
 			if(typeof mockHandler.responseText == "object"){
-				newMock.resolveWith( callbackContext, [mockHandler.responseText] );
+				newMock.resolveWith( callbackContext, [mockHandler.responseText, 'success'] );
 			}
 			else{
-				newMock.resolveWith( callbackContext, [$.parseJSON( mockHandler.responseText )] );
+				newMock.resolveWith( callbackContext, [$.parseJSON( mockHandler.responseText ), 'success'] );
 			}
 		}
 		return newMock;
